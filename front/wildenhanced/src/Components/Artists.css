@@ -2,6 +2,9 @@
     color: black;
 }
 
+.card-body > h5{
+    color: white;
+}
 .artist-card{
     margin-top: 3vh;
     margin-bottom: 3vh;

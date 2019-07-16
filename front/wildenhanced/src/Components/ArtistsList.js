@@ -1,66 +1,74 @@
 
 const ArtistsList = [{
     firstName: "Clément",
-    familyName: "BECHETOILLE",
+    familyName: "SPADECANVAS",
+    nickName: "'Monsieur Loyal'",
     profilePic: "https://i.imgur.com/skIwyZh.jpg",
-    fewWords: "Après des fonctions marketing dans l’édition et les objets éducatifs, Clément s'est engagé dans l’enseignement supérieur au Vietnam puis en France (insertion professionnelle, développement personnel et recrutement innovant). Basé à Reims depuis quelques années, il s’implique dans les initiatives locales, notamment l’organisation de l'édition rémoise de TEDx. Passionné par les nouvelles approches pédagogiques, il a rejoint la Wild Code School comme Campus Manager en janvier 2018.",
-    softSkills: "Clément à pour passion d'aller à la découverte des cultures du monde, et surtout de tout ce qui se mange !",
+    fewWords: "WELCOME INTO THE WILD ! BE PREPARED TO WATCH THE UNBELIEVABLE !",
+    skills: "You cannot beat his organization skills",
 },
 
 {
     firstName: "Thomas",
-    familyName: "CULDAUT",
+    familyName: "WATTERBOTTOM",
+    nickName: "'The Code Master'",
     profilePic: "https://i.imgur.com/CgNFFqi.png",
-    fewWords: "Après des études en informatique, Thomas a tout de suite lié la pratique du développement et de la pédagogie dans le monde de la formation professionnelle en France et au Cameroun. Après une expérience dans une startup parisienne, il rejoint l'équipe pédagogique de la WildCodeSchool, où il coordonne aujourd'hui les formations JS de tous les campus.",
-    softSkills: "Thomas aime beaucoup de choses, des mangas aux jeux de rôles sur plateau, mais pas répondre aux questionnaires sur son parcours ;)",
+    fewWords: "PLEASE ENJOY THE SHOW AND APPLAUSE OUR WELL TRAINED CIRCUS ARTISTS !",
+    skills: "Patience and the fullness of time do more than force or fury",
 },
 
 {
     firstName: "Etienne",
-    familyName: "RABIN",
+    familyName: "PRIEST",
+    nickName: "'The Rookie'",
     profilePic: "https://i.imgur.com/9EfD08d.jpg",
-    fewWords: "Sa passion pour le dessin l'a naturellement amené à faire des études de graphisme. Mais sa nature curieuse et sa volonté d'élargir ses champs de création l'ont amené à rejoindre la WildCodeSchool, d'abord comme élève puis aujourd'hui comme formateur.",
-    softSkills: "Ne prononcez pas les mots \"PSG\" et \"Remontada\" devant lui !",
+    fewWords: "I can juggle between Linux and MacOs as no one else can !",
+    skills: "Survived 5 months in the real wild (La Loupe)",
 },
 
 {
     firstName: "Axel",
-    familyName: "CHANDELIER",
+    familyName: "CHANDELSCRIPT",
+    nickName: "'The Code Juggler'",
     profilePic: "https://i.imgur.com/M3Who57.png",
-    fewWords: "Développeur en formation, je suis courtois, travailleur et ponctuel. Je recherche un stage afin de compléter ma formation.",
-    softSkills: "Travail d'équipe - Autonomie - Ponctualité.",
+    fewWords: "I can code will running my trapez act !",
+    skills: "Cannot be disturbed by anything",
 },
 
 {
     firstName: "Grégoire",
-    familyName: "SURAY",
+    familyName: "FERRET",
+    nickName: "'The Fire Breather'",
     profilePic: "https://i.imgur.com/csYQ0pa.png",
-    fewWords: "Avec un background de 5 ans en management et gestion, j'ai décidé de me réorienter vers le Web. Curieux et déterminé, je me donne toujours à 100% dans ce que j'entreprends.",
-    softSkills: "Aime travailler en équipe, rigoureux et organisé.",
+    fewWords: "I'm the sniper of the team",
+    skills: "Never miss a taunt",
 },
 
 {
     firstName: "Jeremy",
-    familyName: "FIGUEIREDO",
+    familyName: "THEFIG",
+    nickName: "'The Code Tamer'",
     profilePic: "https://i.imgur.com/DrhiIyK.png",
-    fewWords: "Après huit ans d'expériences dans le Tourisme, j'ai décidé de me reconvertir afin que mon intérêt pour le web développement devienne mon métier.",
-    softSkills: "Gestion de Projet, Autonomie, Curiosité.",
+    fewWords: "Ask me anything... except to upload your picture !",
+    skills: "Persistant",
 },
 
 {
     firstName: "Matthieu",
-    familyName: "NICOLAS",
+    familyName: "NICO",
+    nickName: "'The Grumpy Clown'",
     profilePic: "https://i.imgur.com/zRSo9X9.png",
-    fewWords: "Après une première vie de contrôleur de gestion, j'ai rejoint les rangs de la Wild Code School pour me reconvertir dans le développement web. Je suis 100% motivé pour réussir cette nouvelle étape professionnelle dans un domaine qui me passionne.",
-    softSkills: "Organisation - Ecoute - Rigueur.",
+    fewWords: "Even I am amazed by the highest quality of the show",
+    skills: "So dull that everything else around him shines and brights",
 },
 
 {
     firstName: "Sébastien",
-    familyName: "JOLLY",
+    familyName: "PRETTY",
+    nickName: "'The Magician'",
     profilePic: "https://i.imgur.com/MLmuFxn.png",
-    fewWords: "Désireux d'en apprendre plus sur le développement web/mobile, j'ai décidé de me réorienter professionnellement et ainsi pouvoir en faire mon futur métier.",
-    softSkills: "Résolution des problemes - Travail en équipe - Motivation",
+    fewWords: "Will you dare to enter the tent and discover my secrets ?",
+    skills: "Résolution des problemes - Travail en équipe - Motivation",
 },
 ]
 
