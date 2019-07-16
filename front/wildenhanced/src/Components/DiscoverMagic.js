@@ -1,10 +1,10 @@
 import React from 'react';
-import './DiscoverMagic.css'
-
+import './DiscoverMagic.css';
+import Artists from './Artists';
 
 
 const DiscoverMagic = () => (
-    <div className="discover-magic">
+    <div>
         <header className="row align-items-center">
             <div className="col-xs-12 col-md-5 artists">ARTISTS</div>
             <div className="col-xs-12 col-md-2">&</div>
@@ -21,9 +21,9 @@ const DiscoverMagic = () => (
             acrobats, clowns, and the first coding trapeze artists in the World !</span>
             <p>Learn more about the wonderful team below !</p>
             </article>
-            <article className="pl-4 pr-4 pt-4 mt-3 mb-2">
-
-            </article>
+            <div id="wilders" class="ligne1 row no-gutters justify-content-around">
+            <Artists />
+            </div>
         </main>
     </div>
 );

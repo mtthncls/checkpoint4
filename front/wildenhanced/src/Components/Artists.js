@@ -1,61 +1,54 @@
-const wilders = [{
-    firstName: "Axel",
-    familyName: "CHANDELIER",
-    profilePic: "https://i.imgur.com/M3Who57.png",
-    fewWords: "Développeur en formation, je suis courtois, travailleur et ponctuel. Je recherche un stage afin de compléter ma formation.",
-    softSkills: "Travail d'équipe - Autonomie - Ponctualité.",
-},
+import ArtistsList from './ArtistsList';
+import React from 'react'
+import './Artists.css'
 
-{
-    firstName: "Grégoire",
-    familyName: "SURAY",
-    profilePic: "https://i.imgur.com/csYQ0pa.png",
-    fewWords: "Avec un background de 5 ans en management et gestion, j'ai décidé de me réorienter vers le Web. Curieux et déterminé, je me donne toujours à 100% dans ce que j'entreprends.",
-    languages: "Javascript React Node.js HTML5.0 CSS3.0",
-    softSkills: "Aime travailler en équipe, rigoureux et organisé.",
-    mobility: "Reims - Bordeaux - Québec",
-    linkedinLink: "https://www.linkedin.com/in/gr%C3%A9goire-suray-38266a92/",
-    githubLink: "https://github.com/Dezedene",
-    emailLink: "gregoire.suray@gmail.com"
-},
+const Artists = () => (
+    <div className="artists-profiles row justify-content-around">
+    {ArtistsList.map(artist => (
+        <article key={artist.familyName} className="artist-card col-12 col-md-4">
+            <div className="modal fade" id={`${artist.firstName}${artist.familyName}Modal`} tabIndex="-1" role="dialog" 
+            aria-labelledby={`${artist.firstName}${artist.familyName}ModalLabel`} aria-hidden="true">
+                <div className="modal-dialog modal-lg" role="document">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                    <h5 className="modal-title text-center w-100" id={`${artist.firstName}${artist.familyName}ModalLabel`}>{artist.firstName} {artist.familyName}</h5>
+                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                        </div>
+                        <div className="modale">
+                            <div className="modal-body row justify-content-center align-items-center">
+                                <div className="col-12 col-md-6">
+                                    <img className="w-100 rounded-circle modimg"
+                                    src={`${artist.profilePic}`} alt={`${artist.firstName} ${artist.familyName}`} />
+                                </div>
+                            <div className="col-12 col-md-6">
+                                <p>Quelques mots de notre wilder</p>
+                                <p className="text-justify">{artist.fewWords}</p>
+                            <div>
+                                <p>Soft Skills</p>
+                                <p>{artist.softSkills}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div><div>
+                <img src={`${artist.profilePic}`} className="card-img-top rounded-circle test modimg"
+                    alt={`${artist.firstName} ${artist.familyName}`} />
+            </div>
+            <div className="card-body border-0">
+                <h5 className="card-title font-weight-bold">{artist.firstName} <br />{artist.familyName}</h5>
+                <a href="#" className="btn btn-primary" data-toggle="modal" data-target={`#${artist.firstName}${artist.familyName}Modal`}>Voir le
+                    profil</a>
+            </div>
+            </article>
+        ))
+    }
+    </div>
+)
 
-{
-    firstName: "Jeremy",
-    familyName: "FIGUEIREDO",
-    profilePic: "https://i.imgur.com/DrhiIyK.png",
-    fewWords: "Après huit ans d'expériences dans le Tourisme, j'ai décidé de me reconvertir afin que mon intérêt pour le web développement devienne mon métier.",
-    languages: "Javascript React Node.js HTML5.0 CSS3.0",
-    softSkills: "Gestion de Projet, Autonomie, Curiosité.",
-    mobility: "Région Parisienne, Région Grand Est",
-    linkedinLink: "https://www.linkedin.com/in/jeremy-figueiredo/",
-    githubLink: "https://github.com/0figueiredo",
-    emailLink: "figueiredojeremy@gmail.com"
-},
 
-{
-    firstName: "Matthieu",
-    familyName: "NICOLAS",
-    profilePic: "https://i.imgur.com/zRSo9X9.png",
-    fewWords: "Après une première vie de contrôleur de gestion, j'ai rejoint les rangs de la Wild Code School pour me reconvertir dans le développement web. Je suis 100% motivé pour réussir cette nouvelle étape professionnelle dans un domaine qui me passionne.",
-    languages: "Javascript React Node.js HTML5.0 CSS3.0",
-    softSkills: "Organisation - Ecoute - Rigueur.",
-    mobility: "Reims - Paris",
-    linkedinLink: "https://www.linkedin.com/in/matthieunicolas/?locale:fr_FR",
-    githubLink: "https://github.com/mtthncls",
-    emailLink: "mtthncls@gmail.com"
-},
-
-{
-    firstName: "Sébastien",
-    familyName: "JOLLY",
-    profilePic: "https://i.imgur.com/MLmuFxn.png",
-    fewWords: "Désireux d'en apprendre plus sur le développement web/mobile, j'ai décidé de me réorienter professionnellement et ainsi pouvoir en faire mon futur métier.",
-    languages: "Javascript React Node.js HTML5.0 CSS3.0",
-    softSkills: "Résolution des problemes - Travail en équipe - Motivation",
-    mobility: "Everywhere",
-    linkedinLink: "https://www.linkedin.com/in/s%C3%A9bastien-jolly-b48b71115/",
-    githubLink: "https://github.com/seb879",
-    emailLink: "seb_879@hotmail.fr"
-}
-
-]
+export default Artists;

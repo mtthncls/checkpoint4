@@ -11,7 +11,7 @@ isDiscoverPageDisplayed: state.isDiscoverPageDisplayed,
 
 function App({isWelcomePageDisplayed, isDiscoverPageDisplayed}) {
   return (
-    <div className="container-fluid App">
+    <div className="container App">
       {isWelcomePageDisplayed && <WelcomePage />}
       {isDiscoverPageDisplayed && <DiscoverMagic />}
     </div>
