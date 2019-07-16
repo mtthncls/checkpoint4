@@ -5,9 +5,7 @@ import './PriceList.css'
 const PriceList = ({ dispatch }) => (
     <div>
         <header className="row align-items-center">
-            <div className="col-xs-12 col-md-5 artists">ARTISTS</div>
-            <div className="col-xs-12 col-md-2">&</div>
-            <div className="col-xs-12 col-md-5 mb-2 tricks"> TRICKS</div>
+            <div className="col">ENTRANCE FEES</div>
         </header>
         <article className="row justify-content-around align-items-center mt-4">
             <button type="button" className="btn btn-warning col-4" onClick={() => dispatch({
@@ -17,23 +15,29 @@ const PriceList = ({ dispatch }) => (
                 type: 'TOGGLE_DISCOVER_BUY_HOME',
             })}>DISCOVER</button>
         </article>
-        <caption>ENTRANCE FEES</caption>
-        <table>
+        <section className="row align-items-center price-table">
+            <table>
 
 
-            <tr>
-                <th className="tabletitle"></th>
-                <th>Adults</th>
-                <th>Children &#40;&lsaquo;12 yo&#41;</th>
-            </tr>
+                <tr>
+                    <th className="tabletitle"></th>
+                    <th>Adults</th>
+                    <th>Children &#40;&lsaquo;12 yo&#41;</th>
+                </tr>
 
-            <tr className="formatage">
-                <td class="linetitle">Everyday</td>
-                <td>15$</td>
-                <td>7$</td>
-            </tr>
+                <tr className="formatage">
+                    <td class="linetitle">Everyday</td>
+                    <td>20$</td>
+                    <td>10$</td>
+                </tr>
 
-        </table>
+            </table>
+        </section>
+        <div className="row justify-content-around align-items-center mt-4">
+            <button type="button" className="btn btn-warning col-6" onClick={() => dispatch({
+                type: 'DISPLAY_FORM',
+            })}>MAKE A RESERVATION</button>
+        </div>
     </div>
 
 

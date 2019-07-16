@@ -1,0 +1,38 @@
+.price-table{
+	margin-top: 5vh;
+}
+section table
+{
+	margin: auto;
+	border-collapse: collapse;
+}
+
+
+th, td
+{
+  border: 2px solid rgb(229, 145, 71);
+  text-align: center;
+  width: 40vw;
+  height: 20vh;
+  font-weight: normal;
+  color: rgb(229, 145, 71);
+  background-color: white;
+  }
+
+.formatage td
+{
+	background-color: transparent;
+	color: white;
+}
+
+.tabletitle
+  {
+  	background-color: transparent;
+  	border: none;
+  }
+
+tr .linetitle
+{
+	color: rgb(229, 145, 71);
+	background-color: white;
+}

@@ -22,12 +22,12 @@ const DiscoverMagic = ({ dispatch }) => (
             </article>
             <article className="pl-4 pr-4 pt-4 mt-3 mb-2 presentation">
                 In 2017, Clément SpadeCanvas, also know as "The Circus Ninja",
-                creates his bike riding show in Reims,
-            with the help of his fellow companion Thomas WaterBottom<span>,
-                                        touring Champagne-Ardennes in a caravan for 2 years,
-                                        they earn themselves a reputation,
-                                        and start training newbies to join their show as
-            acrobats, clowns, and even the first coding trapeze artists in the World !</span>
+                creates his code circus show in Reims,
+                with the help of his fellow companion Thomas WaterBottom<span>,
+                bike and scooter touring Champagne-Ardennes in a caravan for 2 years,
+                they earned themselves a reputation,
+                and start training newbies to join their show as
+                coder acrobats, clowns, and even the first coding trapeze artists in the World !</span>
                 <p>Learn more about the wonderful team below !</p>
             </article>
             <div id="wilders" class="ligne1 row no-gutters justify-content-around">

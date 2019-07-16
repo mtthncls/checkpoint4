@@ -2,6 +2,7 @@ const initialState = {
   isWelcomePageDisplayed: true,
   isDiscoverPageDisplayed: false,
   isPriceListDisplayed: false,
+  isReservationFormDisplayed: false,
 };
 
 const circusReducer = (state = initialState, action) => {
@@ -24,10 +25,11 @@ const circusReducer = (state = initialState, action) => {
         isPriceListDisplayed: !state.isPriceListDisplayed,
         isDiscoverPageDisplayed: !state.isDiscoverPageDisplayed,
       };
-    case 'SHOW_POI_INFOS':
+    case 'DISPLAY_FORM':
       return {
         ...state,
-        specificPoiInfos: action.specificPoiInfos,
+        isPriceListDisplayed: !state.isPriceListDisplayed,
+        isReservationFormDisplayed: !state.isReservationFormDisplayed,
       };
     default:
       return state;

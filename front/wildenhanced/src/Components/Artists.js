@@ -20,7 +20,7 @@ const Artists = () => (
                                 <div className="modal-body row justify-content-center align-items-center">
                                     <div className="col-12 col-md-6">
                                         <img className="w-100 rounded-circle modimg"
-                                            src={`${artist.profilePic}`} alt={`${artist.firstName} ${artist.familyName}`} />
+                                            src={`${artist.profilePic2}`} alt={`${artist.firstName} ${artist.familyName}`} />
                                     </div>
                                     <div className="col-12 col-md-6">
                                         <p>A few words</p>
