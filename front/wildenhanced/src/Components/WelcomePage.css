@@ -1,0 +1,15 @@
+/* .welcome-page{
+margin: auto;
+background-color: black;
+} */
+
+.welcome{
+    margin-top:30vh;
+    margin-bottom: 5vh;
+    font-size: 6vh;
+}
+
+.enhanced{
+    margin-bottom: 5vh;
+    font-size: 3vh;
+}

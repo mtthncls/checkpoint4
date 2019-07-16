@@ -1,0 +1,30 @@
+header{
+    padding-top: 3vh;
+    font-size: 5vh;
+    font-weight: bolder;
+}
+
+@media screen and (min-width: 640px) {
+    .artists{
+        text-align: right;
+    }
+    
+    .tricks{
+        text-align: left;
+    }
+  }
+
+  .presentation{
+      text-align: justify;
+      font-size: 3vh;
+  }
+
+  @media screen and (max-width: 420px) {
+    .presentation{
+    text-align: left;
+      font-size: 2vh;
+    }
+    .presentation > span{
+        display: none;
+    }
+}

@@ -1,12 +1,21 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './App.css';
+import WelcomePage from './Components/WelcomePage'
+import DiscoverMagic from './Components/DiscoverMagic'
 
-function App() {
+const mapStateToProps = state => ({
+isWelcomePageDisplayed: state.isWelcomePageDisplayed,
+isDiscoverPageDisplayed: state.isDiscoverPageDisplayed,
+});
+
+function App({isWelcomePageDisplayed, isDiscoverPageDisplayed}) {
   return (
-    <div className="App">
-      
+    <div className="container-fluid App">
+      {isWelcomePageDisplayed && <WelcomePage />}
+      {isDiscoverPageDisplayed && <DiscoverMagic />}
     </div>
   );
 }
 
-export default App;
+export default connect(mapStateToProps)(App);
