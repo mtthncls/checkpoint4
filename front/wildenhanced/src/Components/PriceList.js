@@ -26,7 +26,7 @@ const PriceList = ({ dispatch }) => (
                 </tr>
 
                 <tr className="formatage">
-                    <td class="linetitle">Everyday</td>
+                    <td className="linetitle">Everyday</td>
                     <td>20$</td>
                     <td>10$</td>
                 </tr>

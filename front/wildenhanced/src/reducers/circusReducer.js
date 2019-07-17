@@ -3,6 +3,13 @@ const initialState = {
   isDiscoverPageDisplayed: false,
   isPriceListDisplayed: false,
   isReservationFormDisplayed: false,
+  datesTable: [],
+  dateChosen: '',
+  firstNameTyped: '',
+  lastNameTyped: '',
+  emailTyped: '',
+  adultTicketsNumber: '',
+  childTicketsNumber: '',
 };
 
 const circusReducer = (state = initialState, action) => {
@@ -30,6 +37,21 @@ const circusReducer = (state = initialState, action) => {
         ...state,
         isPriceListDisplayed: !state.isPriceListDisplayed,
         isReservationFormDisplayed: !state.isReservationFormDisplayed,
+      };
+    case 'GET_SHOW_DATES':
+      return {
+        ...state,
+        datesTable: action.datesTable,
+      };
+    case 'SAVE_FORM_VALUES':
+      return {
+        ...state,
+        dateChosen: action.dateChosen ? action.dateChosen : state.dateChosen,
+        firstNameTyped: action.firstNameTyped ? action.firstNameTyped : state.firstNameTyped,
+        lastNameTyped: action.lastNameTyped ? action.lastNameTyped : state.lastNameTyped,
+        emailTyped: action.emailTyped ? action.emailTyped : state.emailTyped,
+        adultTicketsNumber: action.adultTicketsNumber ? action.adultTicketsNumber : state.adultTicketsNumber,
+        childTicketsNumber: action.childTicketsNumber ? action.childTicketsNumber : state.childTicketsNumber,
       };
     default:
       return state;
