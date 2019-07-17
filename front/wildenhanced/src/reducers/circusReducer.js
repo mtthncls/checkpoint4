@@ -55,6 +55,12 @@ const circusReducer = (state = initialState, action) => {
         adultTicketsNumber: action.adultTicketsNumber ? action.adultTicketsNumber : state.adultTicketsNumber,
         childTicketsNumber: action.childTicketsNumber ? action.childTicketsNumber : state.childTicketsNumber,
       };
+    case 'BACK_HOME':
+      return {
+        ...state,
+        isWelcomePageDisplayed: !state.isWelcomePageDisplayed,
+        isReservationFormDisplayed: false,
+      };
     default:
       return state;
   }

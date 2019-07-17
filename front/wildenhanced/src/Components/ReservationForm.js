@@ -5,6 +5,13 @@ import axios from 'axios';
 
 const mapStateToProps = state => ({
     datesTable: state.datesTable,
+    dateChosen: state.dateChosen,
+    dateChosenId: state.dateChosenId,
+    firstNameTyped: state.firstNameTyped,
+    lastNameTyped: state.lastNameTyped,
+    emailTyped: state.emailTyped,
+    adultTicketsNumber: state.adultTicketsNumber,
+    childTicketsNumber: state.childTicketsNumber,
 });
 
 
@@ -19,6 +26,12 @@ class ReservationForm extends Component {
     render() {
         const {
             datesTable,
+            firstNameTyped,
+            lastNameTyped,
+            emailTyped,
+            dateChosenId,
+            adultTicketsNumber,
+            childTicketsNumber,
             dispatch
         } = this.props;
         console.log(datesTable)
@@ -72,7 +85,19 @@ class ReservationForm extends Component {
                             <label htmlFor="ChildrenTicket">Children</label>
                             <input type="number" name="ChildrenTicket" id="ChildrenTicket" onChange={(e) => dispatch({ type: 'SAVE_FORM_VALUES', childTicketsNumber: (e.target.value) })} />
                         </div>
-                        <input type="submit" name="submit" id="submit" value="send" />
+                        <input type="submit" name="submit" id="submit" value="send" onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            axios.post(`http://localhost:3001/circus/order`, {
+                                firstname: firstNameTyped,
+                                lastname: lastNameTyped,
+                                email: emailTyped,
+                                dateChosenId: dateChosenId,
+                                adults: adultTicketsNumber,
+                                children: childTicketsNumber
+                            })
+                                .then(res => dispatch({ type: 'BACK_HOME' }));
+                        }} />
                     </form>
                 </section>
             </div>
