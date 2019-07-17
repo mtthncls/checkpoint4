@@ -5,6 +5,7 @@ const fs = require('fs');
 const connection = require('../../conf');
 const getDates = require('../../queries/getdates')
 const createSpectator = require('../../queries/createSpectator')
+const createTicket = require('../../queries/createTicket')
 // Support JSON-encoded bodies
 router.use(bodyParser.json());
 
@@ -48,27 +49,39 @@ router.get('/dates', (req, res) => {
   });
 });
 
-// router.post('/spectator', (req, res) => {
-//   const formData = {
-//     firstname: req.body.firstname,
-//     lastname: req.body.lastname,
-//     email: req.body.email,
-//     adults: req.body.adults,
-//     children: req.body.children,
-
-
-//   }
-
-//   connection.query(createSpectator, [formData], (errorSpectator, result) => {
-//     if (errorSpectator) {
-//       res.status(500).send(`error when adding spectator : ${errorSpectator}`);
-//     } else {
-//       const resultSpectatorId = { spectator_id: result.insertId }
-//       for
-//     }
-//   }
-//   )
-// }
-// )
+router.post('/order', (req, res) => {
+  const spectatorData = {
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    email: req.body.email,
+  }
+  const showDateId = req.body.dateChosenId
+  const adultTicketNumber = req.body.adults
+  const childrenTicketNumber = req.body.children
+  connection.query(createSpectator, [spectatorData], (errorSpectator, result) => {
+    if (errorSpectator) {
+      res.status(500).send(`error when adding spectator : ${errorSpectator}`);
+    } else {
+      const resultSpectatorId = { spectator_id: result.insertId }
+      for (let i = 0; i < adultTicketNumber; i++) {
+        connection.query(createTicket, [resultSpectatorId.spectator_id, showDateId, 1], (errorAdults) => {
+          if (errorAdults) {
+            res.status(500).send(`Error when adding adults tickets : ${errorAdults}`)
+          }
+        })
+      }
+      for (let i = 0; i < childrenTicketNumber; i++) {
+        connection.query(createTicket, [resultSpectatorId.spectator_id, showDateId, 2], (errorChildren) => {
+          if (errorChildren) {
+            res.status(500).send(`Error when adding children tickets : ${errorChildren}`)
+          }
+        }
+        )
+      }
+    }
+  }
+  )
+}
+)
 
 module.exports = router;
