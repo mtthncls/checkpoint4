@@ -6,6 +6,7 @@ const connection = require('../../conf');
 const getDates = require('../../queries/getdates')
 const createSpectator = require('../../queries/createSpectator')
 const createTicket = require('../../queries/createTicket')
+const createOrder = require('../../queries/createOrder')
 // Support JSON-encoded bodies
 router.use(bodyParser.json());
 
@@ -64,16 +65,12 @@ router.post('/order', (req, res) => {
     } else {
       const resultSpectatorId = { spectator_id: result.insertId }
       for (let i = 0; i < adultTicketNumber; i++) {
-        connection.query(createTicket, [resultSpectatorId.spectator_id, showDateId, 1], (errorAdults) => {
+        connection.query(createTicket, [resultSpectatorId.spectator_id, showDateId, 1], (errorAdults, resultAdult) => {
           if (errorAdults) {
             res.status(500).send(`Error when adding adults tickets : ${errorAdults}`)
           }
-        })
-      }
-      for (let i = 0; i < childrenTicketNumber; i++) {
-        connection.query(createTicket, [resultSpectatorId.spectator_id, showDateId, 2], (errorChildren) => {
-          if (errorChildren) {
-            res.status(500).send(`Error when adding children tickets : ${errorChildren}`)
+          else {
+            res.json(resultAdult);
           }
         }
         )
@@ -83,5 +80,57 @@ router.post('/order', (req, res) => {
   )
 }
 )
+
+
+router.post('/tickets', (req, res) => {
+
+  // récupération des données envoyées
+  // const ticketData = {
+  //   spectator_id: req.body.spectator,
+  //   spectacle_id: req.body.spectacle,
+  //   tarrif_id: req.body.tarrif
+  // }
+
+
+  const spectator = req.body.spectator
+  const spectacle = req.body.spectacle
+  const tarrif = req.body.tarrif
+
+  // connexion à la base de données, et insertion de l'employé
+  connection.query(createTicket, [spectator, spectacle, tarrif], (err, results) => {
+
+    if (err) {
+      // Si une erreur est survenue, alors on informe l'utilisateur de l'erreur
+      console.log(err);
+      res.status(500).send("Erreur lors de la sauvegarde");
+    } else {
+      // Si tout s'est bien passé, on envoie un statut "ok".
+      res.sendStatus(200);
+    }
+  });
+});
+
+router.post('/spectator', (req, res) => {
+
+  // récupération des données envoyées
+  const spectatorData = {
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    email: req.body.email,
+  }
+
+  // connexion à la base de données, et insertion de l'employé
+  connection.query(createSpectator, [spectatorData], (err, results) => {
+
+    if (err) {
+      // Si une erreur est survenue, alors on informe l'utilisateur de l'erreur
+      console.log(err);
+      res.status(500).send("Erreur lors de la sauvegarde");
+    } else {
+      // Si tout s'est bien passé, on envoie un statut "ok".
+      res.sendStatus(200);
+    }
+  });
+});
 
 module.exports = router;
