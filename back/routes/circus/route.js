@@ -22,14 +22,20 @@ router.use((req, res, next) => {
 });
 
 router.use((req, res, next) => {
-    let { send } = res;
-    let sent = false;
-    res.send = function (data) {
-      if (sent) return;
-      send.bind(res)(data);
-      sent = true;
-    };
-    next();
-  });
+  let { send } = res;
+  let sent = false;
+  res.send = function (data) {
+    if (sent) return;
+    send.bind(res)(data);
+    sent = true;
+  };
+  next();
+});
 
-  
+
+router.get('/', (req, res) => {
+  res.send('toto');
+});
+
+
+module.exports = router;
