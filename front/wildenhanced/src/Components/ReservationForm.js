@@ -5,7 +5,6 @@ import axios from 'axios';
 
 const mapStateToProps = state => ({
     datesTable: state.datesTable,
-    dateId: state.datesTable.find()
 });
 
 
@@ -34,14 +33,18 @@ class ReservationForm extends Component {
                     <form method="post" action="">
                         <div>
                             <label htmlFor="date-select">Choose a date:</label>
-                            <select id="date-select" onChange={(e) => dispatch({ type: 'SAVE_FORM_VALUES', dateChosen: (e.target.value).slice(0, 10) })}>
+                            <select id="date-select" onChange={(e) => dispatch({
+                                type: 'SAVE_FORM_VALUES',
+                                dateChosen: (e.target.value).slice(0, 10),
+                                dateChosenId: datesTable.find(date => date.showdate.includes(e.target.value)).id
+                            })}>
                                 <option value="">
                                     Pick a date...
                             </option>
                                 {datesTable.map(date => (
                                     <option
                                         key={date.showdate}
-                                        id={date.showdate}
+                                        id={date.id}
                                         value={date.showdate}
                                     >
                                         {(date.showdate).slice(0, 10)}

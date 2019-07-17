@@ -5,6 +5,7 @@ const initialState = {
   isReservationFormDisplayed: false,
   datesTable: [],
   dateChosen: '',
+  dateChosenId: '',
   firstNameTyped: '',
   lastNameTyped: '',
   emailTyped: '',
@@ -47,6 +48,7 @@ const circusReducer = (state = initialState, action) => {
       return {
         ...state,
         dateChosen: action.dateChosen ? action.dateChosen : state.dateChosen,
+        dateChosenId: action.dateChosenId ? action.dateChosenId : state.dateChosenId,
         firstNameTyped: action.firstNameTyped ? action.firstNameTyped : state.firstNameTyped,
         lastNameTyped: action.lastNameTyped ? action.lastNameTyped : state.lastNameTyped,
         emailTyped: action.emailTyped ? action.emailTyped : state.emailTyped,
