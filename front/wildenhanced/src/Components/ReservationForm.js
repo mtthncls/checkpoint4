@@ -34,7 +34,6 @@ class ReservationForm extends Component {
             childTicketsNumber,
             dispatch
         } = this.props;
-        console.log(datesTable)
         return (
             <div>
                 <header className="row align-items-center">
@@ -96,7 +95,7 @@ class ReservationForm extends Component {
                                 adults: adultTicketsNumber,
                                 children: childTicketsNumber
                             })
-                                .then(res => dispatch({ type: 'BACK_HOME' }));
+                                .then(res => dispatch({ type: 'DISPLAY_CONGRATS' }));
                         }} />
                     </form>
                 </section>

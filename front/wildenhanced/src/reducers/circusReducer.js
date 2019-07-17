@@ -3,6 +3,7 @@ const initialState = {
   isDiscoverPageDisplayed: false,
   isPriceListDisplayed: false,
   isReservationFormDisplayed: false,
+  isCongratsPageDisplayed: false,
   datesTable: [],
   dateChosen: '',
   dateChosenId: '',
@@ -54,6 +55,12 @@ const circusReducer = (state = initialState, action) => {
         emailTyped: action.emailTyped ? action.emailTyped : state.emailTyped,
         adultTicketsNumber: action.adultTicketsNumber ? action.adultTicketsNumber : state.adultTicketsNumber,
         childTicketsNumber: action.childTicketsNumber ? action.childTicketsNumber : state.childTicketsNumber,
+      };
+    case 'DISPLAY_CONGRATS':
+      return {
+        ...state,
+        isCongratsPageDisplayed: true,
+        isReservationFormDisplayed: !state.isReservationFormDisplayed,
       };
     case 'BACK_HOME':
       return {
