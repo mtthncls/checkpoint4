@@ -62,6 +62,18 @@ const circusReducer = (state = initialState, action) => {
         isCongratsPageDisplayed: true,
         isReservationFormDisplayed: !state.isReservationFormDisplayed,
       };
+    case 'TOGGLE_CONGRATS_HOME':
+      return {
+        ...state,
+        isCongratsPageDisplayed: false,
+        isWelcomePageDisplayed: !state.isWelcomePageDisplayed,
+      };
+    case 'TOGGLE_CONGRATS_DISCOVER':
+      return {
+        ...state,
+        isCongratsPageDisplayed: false,
+        isDiscoverPageDisplayed: !state.isDiscoverPageDisplayed,
+      };
     case 'BACK_HOME':
       return {
         ...state,

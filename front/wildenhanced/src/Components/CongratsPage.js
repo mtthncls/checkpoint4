@@ -17,7 +17,7 @@ class CongratsPage extends Component {
     }
     render() {
         const {
-
+            dispatch
         } = this.props;
 
         return (
@@ -27,6 +27,18 @@ class CongratsPage extends Component {
                     <div className="col-xs-12 col-md-2">FOR</div>
                     <div className="col-xs-12 col-md-5 mb-2 tricks"> YOUR ORDER</div>
                 </header>
+
+                <article>
+                    Please continue your visit !
+            </article>
+                <article className="row justify-content-around align-items-center mt-4">
+                    <button type="button" className="btn btn-warning col-4" onClick={() => dispatch({
+                        type: 'TOGGLE_CONGRATS_HOME',
+                    })}>HOME</button>
+                    <button type="button" className="btn btn-warning col-4" onClick={() => dispatch({
+                        type: 'TOGGLE_CONGRATS_DISCOVER',
+                    })}>DISCOVER</button>
+                </article>
             </div>
         )
     }

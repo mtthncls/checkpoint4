@@ -56,7 +56,7 @@ const ArtistsList = [{
     profilePic: "https://i.imgur.com/DrhiIyK.png",
     profilePic2: "https://i.imgur.com/ejJEVKA.png",
     fewWords: "Ask me anything... except to upload your picture !",
-    skills: "Persistant",
+    skills: "Better secretary thant MoneyPenny herself",
 },
 
 {
@@ -76,7 +76,7 @@ const ArtistsList = [{
     profilePic: "https://i.imgur.com/MLmuFxn.png",
     profilePic2: "https://i.imgur.com/XslFMXN.png",
     fewWords: "Will you dare to enter the tent and discover my secrets ?",
-    skills: "Résolution des problemes - Travail en équipe - Motivation",
+    skills: "Masters the art of silent moves",
 },
 ]
 

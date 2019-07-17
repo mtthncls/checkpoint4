@@ -6,10 +6,10 @@ import Artists from './Artists';
 
 const DiscoverMagic = ({ dispatch }) => (
     <div>
-        <header className="row align-items-center">
-            <div className="col-xs-12 col-md-5 artists">ARTISTS</div>
-            <div className="col-xs-12 col-md-2">&</div>
-            <div className="col-xs-12 col-md-5 mb-2 tricks"> TRICKS</div>
+        <header className="row justify-content-center">
+            <div className="col-xs-12 col-sm-5 artists">ARTISTS</div>
+            <div className="col-xs-12 col-sm-2">&</div>
+            <div className="col-xs-12 col-sm-5 tricks"> TRICKS</div>
         </header>
         <main>
             <article className="row justify-content-around align-items-center mt-4">
@@ -30,7 +30,7 @@ const DiscoverMagic = ({ dispatch }) => (
                 coder acrobats, clowns, and even the first coding trapeze artists in the World !</span>
                 <p>Learn more about the wonderful team below !</p>
             </article>
-            <div id="wilders" class="ligne1 row no-gutters justify-content-around">
+            <div id="wilders" className="ligne1 row no-gutters justify-content-around">
                 <Artists />
             </div>
         </main>

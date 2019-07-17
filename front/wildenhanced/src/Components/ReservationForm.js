@@ -84,22 +84,28 @@ class ReservationForm extends Component {
                             <label htmlFor="ChildrenTicket">Children</label>
                             <input type="number" name="ChildrenTicket" id="ChildrenTicket" onChange={(e) => dispatch({ type: 'SAVE_FORM_VALUES', childTicketsNumber: (e.target.value) })} />
                         </div>
-                        <input type="submit" name="submit" id="submit" value="send" onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            axios.post(`http://localhost:3001/circus/order`, {
-                                firstname: firstNameTyped,
-                                lastname: lastNameTyped,
-                                email: emailTyped,
-                                dateChosenId: dateChosenId,
-                                adults: adultTicketsNumber,
-                                children: childTicketsNumber
-                            })
-                                .then(res => dispatch({ type: 'DISPLAY_CONGRATS' }));
-                        }} />
+                        <div className="row justify-content-around align-items-center mt-4">
+                            <input type="submit" name="submit" id="submit" value="SEND" className="btn btn-warning col-4" onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                axios.post(`http://localhost:3001/circus/order`, {
+                                    firstname: firstNameTyped,
+                                    lastname: lastNameTyped,
+                                    email: emailTyped,
+                                    dateChosenId: dateChosenId,
+                                    adults: adultTicketsNumber,
+                                    children: childTicketsNumber
+                                })
+                                    .then(res => dispatch({ type: 'DISPLAY_CONGRATS' }));
+                            }} />
+
+                            <button type="button" className="btn btn-warning col-4" onClick={() => dispatch({
+                                type: 'DISPLAY_FORM',
+                            })}>CANCEL</button>
+                        </div>
                     </form>
                 </section>
-            </div>
+            </div >
         )
     }
 };
