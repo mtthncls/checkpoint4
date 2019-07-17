@@ -75,6 +75,17 @@ router.post('/order', (req, res) => {
         }
         )
       }
+      for (let i = 0; i < childrenTicketNumber; i++) {
+        connection.query(createTicket, [resultSpectatorId.spectator_id, showDateId, 2], (errorChildren, resultChildren) => {
+          if (errorChildren) {
+            res.status(500).send(`Error when adding adults tickets : ${errorChildren}`)
+          }
+          else {
+            res.json(resultChildren);
+          }
+        }
+        )
+      }
     }
   }
   )
